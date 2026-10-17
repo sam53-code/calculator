@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>Home</li>
+        <li>Basic Calculator</li>
+        <li>Scientific Calculator</li>
+      </ul>
+    </header>
+
+    <h2>Basic Calculator</h2>
+
+    <div class="basic-calculator">
+      <div class="calculator">
+        <input type="text" id="display" class="display" readonly value="0" />
+
+        <div class="flex-row">
+          <button type="button" class="clearBtn btn">CE</button>
+          <button type="button" class="backspace btn">&#x232B;</button>
+          <button type="button" class="percentage btn">&#37;</button>
+          <button type="button" class="operator btn">&divide;</button>
+        </div>
+
+        <div class="flex-row">
+          <button type="button" class="number btn">1</button>
+          <button type="button" class="number btn">2</button>
+          <button type="button" class="number btn">3</button>
+          <button type="button" class="operator btn">&times;</button>
+        </div>
+
+        <div class="flex-row">
+          <button type="button" class="number btn">4</button>
+          <button type="button" class="number btn">5</button>
+          <button type="button" class="number btn">6</button>
+          <button type="button" class="operator btn">&minus;</button>
+        </div>
+
+        <div class="flex-row">
+          <button type="button" class="number btn">7</button>
+          <button type="button" class="number btn">8</button>
+          <button type="button" class="number btn">9</button>
+          <button type="button" class="operator btn">&plus;</button>
+        </div>
+
+        <div class="flex-row">
+          <button type="button" class="pluc-minus btn">&#177;</button>
+          <button type="button" class="number btn">0</button>
+          <button type="button" class="decimal btn">&#46;</button>
+          <button type="button" id="equals" class="operator btn">&#61;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scientific-calculator">
+      <h2></h2>
+    </div>
+  </body>
+</html>
