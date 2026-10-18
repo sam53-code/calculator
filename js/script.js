@@ -30,11 +30,6 @@ function calculate(num1, operator, num2) {
   }
 }
 
-console.log(calculate("9", "+", "7"));
-console.log(calculate("9", "-", "7"));
-console.log(calculate("9", "/", "7"));
-console.log(calculate("9", "*", "7"));
-
 //event delegation using switch and dataset
 
 const input = document.querySelector(".display");
@@ -53,8 +48,12 @@ calculatorGrid.addEventListener("click", (e) => {
       if (awaitingNum2) {
         input.value = value;
         awaitingNum2 = false;
+      } else if (
+        input.value.includes(".") &&
+        input.value.split(".")[1].length >= 1
+      ) {
+        break;
       } else if (input.value === "0") {
-        //resolving leading zeros
         input.value = value === "0" ? "0" : value;
       } else {
         input.value += value;
@@ -128,10 +127,11 @@ calculatorGrid.addEventListener("click", (e) => {
 
       const result = calculate(num1, operator, num2);
 
-      input.value =
-        typeof result === "number" && Number.isFinite(result)
-          ? String(result)
-          : "Error";
+      if (result.includes(".") && result.split(".")[1].length >= 1)
+        input.value =
+          typeof result === "number" && Number.isFinite(result)
+            ? String(result)
+            : "Error";
 
       num1 = "";
       num2 = "";
