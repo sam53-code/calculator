@@ -50,9 +50,12 @@ calculatorGrid.addEventListener("click", (e) => {
 
   switch (action) {
     case "number":
-      if (awaitingNum2 || num1 === "0") {
+      if (awaitingNum2) {
         input.value = value;
         awaitingNum2 = false;
+      } else if (input.value === "0") {
+        //resolving leading zeros
+        input.value = value === "0" ? "0" : value;
       } else {
         input.value += value;
       }
@@ -86,7 +89,7 @@ calculatorGrid.addEventListener("click", (e) => {
 
       break;
 
-    case "decimals":
+    case "decimal": //replace decimals with decimal to correspond to html data value
       if (awaitingNum2) {
         input.value = "0.";
         awaitingNum2 = false;
@@ -98,7 +101,10 @@ calculatorGrid.addEventListener("click", (e) => {
 
     case "delete":
       if (awaitingNum2) {
-        input.value = input.value.slice(0, -1);
+        input.value = input.value.slice(1, -1);
+      } else if (input.value === "Error") {
+        //deleting Error message with one click
+        input.value = "";
       }
       break;
 
