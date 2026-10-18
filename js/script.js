@@ -100,11 +100,15 @@ calculatorGrid.addEventListener("click", (e) => {
       break;
 
     case "delete":
-      if (awaitingNum2) {
-        input.value = input.value.slice(1, -1);
-      } else if (input.value === "Error") {
-        //deleting Error message with one click
-        input.value = "";
+      if (input.value === "Error") {
+        input.value = "0";
+        awaitingNum2 = false;
+      } else if (awaitingNum2) {
+        break;
+      } else if (input.value.length > 1) {
+        input.value = input.value.slice(0, -1);
+      } else {
+        input.value = "0";
       }
       break;
 
@@ -114,6 +118,25 @@ calculatorGrid.addEventListener("click", (e) => {
       num2 = "";
       operator = "";
       awaitingNum2 = false;
+
+      break;
+
+    case "equals":
+      if (num1 === "" || operator === "" || awaitingNum2) return;
+
+      num2 = input.value;
+
+      const result = calculate(num1, operator, num2);
+
+      input.value =
+        typeof result === "number" && Number.isFinite(result)
+          ? String(result)
+          : "Error";
+
+      num1 = "";
+      num2 = "";
+      operator = "";
+      awaitingNum2 = true;
 
       break;
   }
