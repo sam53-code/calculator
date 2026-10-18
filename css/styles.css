@@ -8,19 +8,9 @@
   --color-text: #061128;
   --color-text-muted: #1f2145;
 
-  /* Calculator buttons */
-  --color-btn: #e5e7eb;
-  --color-btn-hover: #d1d5db;
-
   /* Operators btn*/
-  --color-operator: #59aefd;
-  --color-operator-hover: #a3d2fe;
-
-  /* Special buttons */
-  --color-clear: #fd6666;
-  --color-clear-hover: #fe9f9f;
-  --color-equals: #40ff86;
-  --color-equals-hover: #a6f9c5;
+  --color-operator: #29faf0;
+  --color-operator-hover: #95fffac4;
 
   /* Borders and shadows */
   --color-border: #999999;
@@ -47,6 +37,7 @@ header ul {
 .basic-calculator {
   display: flex;
   justify-content: center;
+  margin-top: 40px;
 }
 
 h2 {
@@ -109,34 +100,35 @@ h2 {
   box-shadow: 4px 2px 8px var(--color-shadow);
 }
 
-.operator {
-  background-color: var(--color-operator);
+.btn:active {
+  opacity: 0.7;
 }
 
-.operator:hover {
-  background-color: var(--color-operator-hover);
-}
-
-.clearBtn {
-  background-color: var(--color-clear);
-  font-weight: 800;
-}
-
-.clearBtn:hover {
-  background-color: var(--color-clear-hover);
-}
-
-.equals {
-  background-color: var(--color-equals);
-}
-
-.equals:hover {
-  background-color: var(--color-equals-hover);
-}
-
+.operator,
+.equals,
+.clearBtn,
 .backspace,
 .percentage,
 .plus-minus,
 .decimal {
-  background-color: var(--color-border);
+  background-color: var(--color-operator);
+}
+
+.operator:hover,
+.equals:hover,
+.clearBtn:hover,
+.backspace:hover,
+.percentage:hover,
+.plus-minus:hover,
+.decimal:hover {
+  background-color: var(--color-operator-hover);
+}
+
+.backspace {
+  font-weight: 540;
+}
+
+.plus-minus,
+.percentage {
+  cursor: not-allowed;
 }

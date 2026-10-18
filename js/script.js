@@ -127,11 +127,10 @@ calculatorGrid.addEventListener("click", (e) => {
 
       const result = calculate(num1, operator, num2);
 
-      if (result.includes(".") && result.split(".")[1].length >= 1)
-        input.value =
-          typeof result === "number" && Number.isFinite(result)
-            ? String(result)
-            : "Error";
+      input.value =
+        typeof result === "number" && Number.isFinite(result)
+          ? String(result)
+          : "Error";
 
       num1 = "";
       num2 = "";
