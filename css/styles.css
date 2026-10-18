@@ -1,6 +1,6 @@
 :root {
   /* Background colors */
-  --color-bg: #f7f9ff;
+  --color-bg: #f4f4f4d3;
   --color-surface: #ffffff;
   --color-display: #e5e7eb;
 
@@ -8,9 +8,10 @@
   --color-text: #061128;
   --color-text-muted: #1f2145;
 
-  /* Operators btn*/
+  /*  btn*/
   --color-operator: #29faf0;
-  --color-operator-hover: #95fffac4;
+  --color-operator-hover: #d0fefc85;
+  --color-btn-hover: rgba(241, 224, 208, 0.4);
 
   /* Borders and shadows */
   --color-border: #999999;
@@ -97,13 +98,13 @@ h2 {
   border-left: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-btn-hover);
-  box-shadow: 4px 2px 8px var(--color-shadow);
+  box-shadow: 4px 4px 8px var(--color-shadow);
 }
 
 .btn:active {
   opacity: 0.7;
 }
-
+/* 
 .operator,
 .equals,
 .clearBtn,
@@ -112,7 +113,7 @@ h2 {
 .plus-minus,
 .decimal {
   background-color: var(--color-operator);
-}
+} */
 
 .operator:hover,
 .equals:hover,

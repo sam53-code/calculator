@@ -160,3 +160,29 @@ function handleCalculatorInput(action, value = "") {
       break;
   }
 }
+
+// Keyboard input support
+
+window.addEventListener("keydown", (e) => {
+  const key = e.key;
+
+  if (e.ctrlKey || e.altKey || e.metaKey) return; // Avoid interfering with browser shortcuts
+
+  if (/^[0-9]$/.test(key)) {
+    handleCalculatorInput("number", key);
+  } else if (["+", "-", "*", "/"].includes(key)) {
+    handleCalculatorInput("operator", key);
+  } else if (key === "." || key === ",") {
+    handleCalculatorInput("decimal");
+  } else if (key === "Enter" || key === "=") {
+    e.preventDefault();
+    handleCalculatorInput("equals");
+  } else if (key === "Backspace") {
+    e.preventDefault();
+    handleCalculatorInput("delete");
+  } else if (key === "Escape" || key.toLowerCase() === "c") {
+    handleCalculatorInput("clear");
+  } else if (key === "%") {
+    handleCalculatorInput("percent");
+  }
+});
