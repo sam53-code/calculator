@@ -85,5 +85,30 @@ calculatorGrid.addEventListener("click", (e) => {
       awaitingNum2 = true;
 
       break;
+
+    case "decimals":
+      if (awaitingNum2) {
+        input.value = "0.";
+        awaitingNum2 = false;
+      } else if (!input.value.includes(".")) {
+        input.value += input.value === "" ? "0." : ".";
+      }
+
+      break;
+
+    case "delete":
+      if (awaitingNum2) {
+        input.value = input.value.slice(0, -1);
+      }
+      break;
+
+    case "clear":
+      input.value = "";
+      num1 = "";
+      num2 = "";
+      operator = "";
+      awaitingNum2 = false;
+
+      break;
   }
 });
