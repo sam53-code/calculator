@@ -1,6 +1,6 @@
 :root {
   /* Background colors */
-  --color-bg: #f4f4f4d3;
+  --color-bg: #f2fcfed3;
   --color-surface: #ffffff;
   --color-display: #e5e7eb;
 
@@ -11,7 +11,8 @@
   /*  btn*/
   --color-operator: #29faf0;
   --color-operator-hover: #d0fefc85;
-  --color-btn-hover: rgba(241, 224, 208, 0.4);
+  --color-btn-hover: #f1e0d066;
+  --color-btn: #f0eded9d;
 
   /* Borders and shadows */
   --color-border: #999999;
